@@ -384,6 +384,6 @@ console.log(Filho);
 ```
 
 Fonte:
-https://webpack.js.org/
-https://medium.com/rocketseat/entendendo-e-dominando-o-webpack-4b2e8b3e02da
-https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes
+* https://webpack.js.org/
+* https://medium.com/rocketseat/entendendo-e-dominando-o-webpack-4b2e8b3e02da
+* https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes
