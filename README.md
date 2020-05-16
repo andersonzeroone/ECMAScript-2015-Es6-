@@ -3,28 +3,28 @@ ES6+
 Um pouco sobre as novas funcionalidades do javaScript como:
 
 
-   [webpack](#sobre-webpack)
-   [Class}(#sobre-class)
-    Arrow functions
-    DesestruturaÁ„o
-    Rest/spread
-    Import/export
-    Async/await
+ *  [webpack](#sobre-webpack)
+ *  [Class](#sobre-class)
+ *  Arrow functions
+ *  Desestrutura√ß√£o
+ *  Rest/spread
+ *  Import/export
+ *  Async/await
 
 ## Sobre webpack  
 
-O webpack È usado para empacotar modulos est·ticos, gerando um mapeamento dos modulos e dependencias podendo gerar um ou mais pacotes. Em resumo, um projeto que existem diversos arquivos .js, .css È possÌvel unir esses modulos, ou em projetos maiores divide esses modulos e no final passam a ser um sÛ.
+O webpack √© usado para empacotar modulos est√°ticos, gerando um mapeamento dos modulos e dependencias podendo gerar um ou mais pacotes. Em resumo, um projeto que existem diversos arquivos .js, .css √© poss√≠vel unir esses modulos, ou em projetos maiores divide esses modulos e no final passam a ser um s√≥.
 
 entendo o que acontece ...
 
 ![img](https://www.webdevdrops.com/wp-content/uploads/2019/10/webpack-1.png)
 
 
-O webpack posso a seguinte estrutura b·sica.
+O webpack posso a seguinte estrutura b√°sica.
 
 #Entrey
 
-Indica qual mÛdulo o webpack deve usar para iniciar em seguida busca as dependÍmcias  e faz a importaÁ„o. Normalmente o ponto de entrada  È definido no ./src/main.js, mas È possÌvel definir um arquivo diferente e atÈ emsmo v·rios pontos de entradas fazendo sua configuraÁ„o no webpack.config.js.
+Indica qual m√≥dulo o webpack deve usar para iniciar em seguida busca as depend√™mcias  e faz a importa√ß√£o. Normalmente o ponto de entrada  √© definido no ./src/main.js, mas √© poss√≠vel definir um arquivo diferente e at√© emsmo v√°rios pontos de entradas fazendo sua configura√ß√£o no webpack.config.js.
 
 ```css
 module.exports = {
@@ -33,7 +33,8 @@ module.exports = {
 ```
 # Output
 
-Output define o nome e local  onde ser·  gerado  o pacote pelo webpack.  Para configurar, devemos definir um objeto output com as propriedades path  e filename no arquivo de configuraÁ„o do webpack:
+Output define o nome e local  onde ser√°  gerado  o pacote pelo webpack.  Para configurar, devemos definir um objeto output com as propriedades path  e filename no arquivo de configura√ß√£o do webpack:
+
 ```css
 module.exports = {
 	entry: './src/main.js',
@@ -44,12 +45,12 @@ module.exports = {
 
 ```
 
-Essa congiguraÁ„o ir· um arquivo bundle.js , A propriedade  path   indica onde o arquivo ser· criado , o __dirname  vari·vel do nodejs contÈm o nome do diret?io onse se encontra o mÛdulo atual.
-e filename  o nome do arquivo que ser· gerado.
+Essa congigura√ß√£o ir√° um arquivo bundle.js , A propriedade  path   indica onde o arquivo ser√° criado , o __dirname  vari√°vel do nodejs cont√©m o nome do diret?io onse se encontra o m√≥dulo atual.
+e filename  o nome do arquivo que ser√° gerado.
 
 # Loaders
 
-O Loaders È usadado para que ele possa entender outros tipos de arquivos  Loaders que s„o mÛdulos que podem ser instalados separadamente possibilitando que o webpack converta esses arquivos em mÛdulos v·lidos e os adicione ao gr·fico de dependÍncia. Os Loaders tambÈm s„o utilizados para converter JavaScript de uma vers„o para outra. Para incluirmos os Loaders criamos uma nova seÁ„o module no arquivo de configuraÁ„o, nessa seÁ„o podemos definir uma ou mais rules
+O Loaders √© usadado para que ele possa entender outros tipos de arquivos  Loaders que s√£o m√≥dulos que podem ser instalados separadamente possibilitando que o webpack converta esses arquivos em m√≥dulos v√°lidos e os adicione ao gr√°fico de depend√™ncia. Os Loaders tamb√©m s√£o utilizados para converter JavaScript de uma vers√£o para outra. Para incluirmos os Loaders criamos uma nova se√ß√£o module no arquivo de configura√ß√£o, nessa se√ß√£o podemos definir uma ou mais rules
 
 ```css
 module:{
@@ -106,10 +107,10 @@ module.exports = {
 
 ## Sobre Class
 
-As classes foram introduzidas no ECMAScript 2015, uma heranÁa baseada em protÛtipos.As casses em JavaScript permite a criaÁ„o simples e clara de objetos e lidar com heranÁa.
+As classes foram introduzidas no ECMAScript 2015, uma heran√ßa baseada em prot√≥tipos.As casses em JavaScript permite a cria√ß√£o simples e clara de objetos e lidar com heran√ßa.
 
 Definindo classes
-Uma maneira de definir uma classe È usando uma declaraÁ„o de classe. Para declarar uma classe, vocÍ deve usar a palavra-chave class seguida pelo nome da classe (aqui "avo").
+Uma maneira de definir uma classe √© usando uma declara√ß√£o de classe. Para declarar uma classe, voc√™ deve usar a palavra-chave class seguida pelo nome da classe (aqui "avo").
 
 ```css
 class avo {
@@ -118,9 +119,9 @@ class avo {
        }
 }
 ```
-## Expressıes de Classes
+## Express√µes de Classes
 
-Expressıes de Classes podem possuir nomes ou n„o (anÙnimas). O nome dado para uma express„o de classe È local ao corpo da classe.
+Express√µes de Classes podem possuir nomes ou n√£o (an√¥nimas). O nome dado para uma express√£o de classe √© local ao corpo da classe.
 
 ```css
 // sem nome
@@ -143,7 +144,7 @@ A classe possui em sua estrutura metodos e um construtor, o corpo da chave e env
 
 ## Construtor 
 
-O mÈtodo constructor È um tipo especial de mÈtodo para criar e iniciar um objeto criado pela classe. SÛ pode existir um mÈtodo especial com o nome "constructor" dentro da classe. Um erro de sint·xe SyntaxError ser· lanÁado se a classe possui mais do que uma ocorrÍncia do mÈtodo constructor.
+O m√©todo constructor √© um tipo especial de m√©todo para criar e iniciar um objeto criado pela classe. S√≥ pode existir um m√©todo especial com o nome "constructor" dentro da classe. Um erro de sint√°xe SyntaxError ser√° lan√ßado se a classe possui mais do que uma ocorr√™ncia do m√©todo constructor.
 Um construtor pode usar a palavra-chave super para chamar o construtor de uma classe pai.
 
 
@@ -153,9 +154,9 @@ Um construtor pode usar a palavra-chave super para chamar o construtor de uma cl
 
 
 
-## MÈtodos est·ticos
+## M√©todos est√°ticos
 
-A palavra-chave static define um mÈtodo est·tico de uma classe. MÈtodos est·ticos s„o chamados sem a instanciaÁ„o da sua classe e n„o podem ser chamados quando a classe È instanciada. MÈtodos est·ticos s„o geralmente usados para criar funÁıes de utilidades por uma aplicaÁ„o.
+A palavra-chave static define um m√©todo est√°tico de uma classe. M√©todos est√°ticos s√£o chamados sem a instancia√ß√£o da sua classe e n√£o podem ser chamados quando a classe √© instanciada. M√©todos est√°ticos s√£o geralmente usados para criar fun√ß√µes de utilidades por uma aplica√ß√£o.
 
 
 ```css
@@ -182,10 +183,10 @@ p2.distancia;//undefined
 
 console.log(Ponto.distancia(p1, p2));
 ```
-## Empacotando com protÛtipos e mÈtodos est·ticos
+## Empacotando com prot√≥tipos e m√©todos est√°ticos
 
-Quando um mÈtodo est·tico ou protÛtipo È chamado sem um objeto "this" configurado (ou com "this" como boolean, string, number, undefined ou null), ent„o o valor "this" ser· undefined dentro da funÁ„o chamada. Autoboxing n„o vai acontecer. O comportamento ser· o mesmo mesmo se escrevemos o cÛdigo no modo n„o-estrito.
-```
+Quando um m√©todo est√°tico ou prot√≥tipo √© chamado sem um objeto "this" configurado (ou com "this" como boolean, string, number, undefined ou null), ent√£o o valor "this" ser√° undefined dentro da fun√ß√£o chamada. Autoboxing n√£o vai acontecer. O comportamento ser√° o mesmo mesmo se escrevemos o c√≥digo no modo n√£o-estrito.
+
 ```css
 class Animal { 
         falar() {
@@ -206,7 +207,7 @@ let comer = Animal.comer;
 comer(); // undefined
 ```
 
-Se escrevemos o cÛdigo acima usando classes baseadas em funÁ„o tradicional, ent„o o autoboxing acontecer· com base no valor de "this" para o qual a funÁ„o foi chamada.
+Se escrevemos o c√≥digo acima usando classes baseadas em fun√ß√£o tradicional, ent√£o o autoboxing acontecer√° com base no valor de "this" para o qual a fun√ß√£o foi chamada.
 
 
 ```css
@@ -228,9 +229,9 @@ let comer = Animal.comer;
 comer(); // objeto global
 
 ```
-## Propriedades de inst‚ncia
+## Propriedades de inst√¢ncia
 
-Propriedades de inst‚ncias devem ser definidas dentro dos mÈtodos da classe:
+Propriedades de inst√¢ncias devem ser definidas dentro dos m√©todos da classe:
 ```css
 class Retangulo {
    constructor(altura, largura) {    
@@ -239,13 +240,13 @@ class Retangulo {
   }
 }
 ```
-Propriedades de dados est·ticos e propriedades de dados prototipados (prototype) devem ser definidos fora da declaraÁ„o do corpo da classe.
+Propriedades de dados est√°ticos e propriedades de dados prototipados (prototype) devem ser definidos fora da declara√ß√£o do corpo da classe.
 
 Retangulo.larguraEstatico = 20;
 Retangulo.prototype.larguraPrototipagem = 25;
 Sub classes com o extends
 
-A palavra-chave extends È usada em uma declaraÁ„o de classe, ou em uma express„o de classe para criar uma classe como filha de uma outra classe.
+A palavra-chave extends √© usada em uma declara√ß√£o de classe, ou em uma express√£o de classe para criar uma classe como filha de uma outra classe.
 
 ```css
 class Animal { 
@@ -268,9 +269,9 @@ let cachorro = new Cachorro('Mat');
 cachorro.falar();
 
 ```
-Se existir um contrutor nas subclasses, È necess·rio primeiro chamar super() antes de usar a keyword "this".
+Se existir um contrutor nas subclasses, √© necess√°rio primeiro chamar super() antes de usar a keyword "this".
 
-TambÈm È possivel ampliar (extends) "classes" baseadas em funÁıes tradicionais.
+Tamb√©m √© possivel ampliar (extends) "classes" baseadas em fun√ß√µes tradicionais.
 
 ```css
 function Animal (nome) {
@@ -278,7 +279,7 @@ function Animal (nome) {
 }
 
 Animal.prototype.falar = function() {
-   console.log(this.nome + ' faÁa barulho.');
+   console.log(this.nome + ' fa√ßa barulho.');
 }
 
 class Cachorro extends Animal { 
@@ -290,11 +291,11 @@ class Cachorro extends Animal {
 let cachorro = new Cachorro('Mitzie');
 cachorro.falar(); // Mitzie lati.
 
-Note que classes n„o extendem objetos normais (n„o construÌveis). Se vocÍ quer herdar de um objeto, È necess·rio utilizar Object.setPrototypeOf():
+Note que classes n√£o extendem objetos normais (n√£o constru√≠veis). Se voc√™ quer herdar de um objeto, √© necess√°rio utilizar Object.setPrototypeOf():
 
 let Animal = {
    falar() {
-      console.log(this.nome + ' faÁa barulho.');
+      console.log(this.nome + ' fa√ßa barulho.');
    }
 };
 
@@ -307,14 +308,14 @@ class Cachorro {
 Object.setPrototypeOf(Cachorro.prototype, Animal); 
 
 let cachorro = new Cachorro('Mitzie');
-cachorro.falar(); //Mitzie faÁa barulho.
+cachorro.falar(); //Mitzie fa√ßa barulho.
 ```
 
 ## Species
 
-VocÍ pode querer retornar um objeto Array na sua classe MinhaArray derivada de array. O padr„o Species permite a sobrescrita do construtor padr„o.
+Voc√™ pode querer retornar um objeto Array na sua classe MinhaArray derivada de array. O padr√£o Species permite a sobrescrita do construtor padr√£o.
 
-Por exemplo, quando utilizando um mÈtodo como map() que retorna o construtor padr„o, vocÍ pode querer que esse mÈtodo retorne um objeto Array ao invÈs do objeto MinhaArray. O Symbol.species te permite fazer isso:
+Por exemplo, quando utilizando um m√©todo como map() que retorna o construtor padr√£o, voc√™ pode querer que esse m√©todo retorne um objeto Array ao inv√©s do objeto MinhaArray. O Symbol.species te permite fazer isso:
 
 class MinhaArray extends Array {
    // Sobrescreve species para o construtor da classe pai Array
@@ -329,7 +330,7 @@ console.log(mapped instanceof Array); // true
 
 ## Chamada da classe pai com super
 
-A palavra-chave (keyword) super È utilizada para chamar funÁıes que pertencem ao pai do objeto.
+A palavra-chave (keyword) super √© utilizada para chamar fun√ß√µes que pertencem ao pai do objeto.
 
 ```css
 class Gato {
@@ -338,7 +339,7 @@ class Gato {
    }
 
    falar() {
-      console.log(this.nome + ' faÁa barulho.');
+      console.log(this.nome + ' fa√ßa barulho.');
    }
 }
 
@@ -352,7 +353,7 @@ class Leao extends Gato {
 let leao = new Leao('Fuzzy');
 leao.falar();
 
-// Fuzzy faÁa barulho.
+// Fuzzy fa√ßa barulho.
 // Fuzzy roars.
 ```
 
