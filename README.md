@@ -14,6 +14,16 @@ Um pouco sobre as novas funcionalidades do javaScript como:
 
 ##### Alguns projetos precisam ser rodados no browser  para ver o um pouco o funcionamento do babel.
 
+#### como rodar os projetos do browser
+
+Para rodar os projetos é preciso:
+* Instalar o ![yarn](https://yarnpkg.com/)
+* Rodar o "npm i" ou utilizando o yarn para poder instalar as dependências
+* Usar o comando "yarn dev"
+* Abrir o arquivo index.js no browser
+* Abrir a opção de  desenvolvedor (F12) no navegador
+
+
 ## Sobre webpack  
 
 O webpack é usado para empacotar modulos estáticos, gerando um mapeamento dos modulos e dependencias podendo gerar um ou mais pacotes. Em resumo, um projeto que existem diversos arquivos .js, .css é possível unir esses modulos, ou em projetos maiores divide esses modulos e no final passam a ser um só.
@@ -711,3 +721,4 @@ Fonte:
 * https://medium.com/rocketseat/entendendo-e-dominando-o-webpack-4b2e8b3e02da
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+* https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao
