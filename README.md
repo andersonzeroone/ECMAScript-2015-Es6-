@@ -1,4 +1,5 @@
-ES6+
+# ES6+
+
 
 Um pouco sobre as novas funcionalidades do javaScript como:
 
@@ -10,6 +11,8 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  Rest/spread
  *  Import/export
  *  Async/await
+
+##### Alguns projetos precisam ser rodados no browser  para ver o um pouco o funcionamento do babel.
 
 ## Sobre webpack  
 
