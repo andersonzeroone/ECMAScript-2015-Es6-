@@ -6,9 +6,8 @@ Um pouco sobre as novas funcionalidades do javaScript como:
 
  *  [webpack](#sobre-webpack)
  *  [Class](#sobre-class)
- *  [Arrow functions](#sobre-Arrow-funtions 
-)
- *  Desestruturação
+ *  [Arrow functions](#sobre-Arrow-funtions)
+ *  [Desestruturação](#sobre-desestruturação)
  *  Rest/spread
  *  Import/export
  *  Async/await
@@ -452,6 +451,260 @@ elements.map(({ "length": lengthFooBArX }) => lengthFooBArX); // [8, 6, 7, 9]
 elements.map(({ length }) => length); // [8, 6, 7, 9]
 ```
 
+## Sobre desestruturação
+A desestruturação em JavaScript e uma expressão que permite extrair dados de arrays ou objetos.
+
+## Ex:
+```css
+var a, b, rest;
+[a, b] = [1, 2];
+console.log(a); // 1
+console.log(b); // 2
+
+[a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(a); // 1
+console.log(b); // 2
+console.log(rest); // [3, 4, 5]
+
+({a, b} = {a:1, b:2});
+console.log(a); // 1
+console.log(b); // 2
+
+// ES2016 - não implementado em Firefox 47a01
+({a, b, ...rest} = {a:1, b:2, c:3, d:4});
+```
+
+## Desestruturação de array
+
+Atribuição básica de variável
+
+```css
+var foo = ["one", "two", "three"];
+
+var [one, two, three] = foo;
+console.log(one); // "one"
+console.log(two); // "two"
+console.log(three); // "three"
+```
+
+Atribuição separada da declaração
+
+Uma variável pode ter seu valor atribuído via desestruturação separadamente da declaração dela.
+
+```css
+
+var a, b;
+
+[a, b] = [1, 2];
+console.log(a); // 1
+console.log(b); // 2
+
+```
+
+Analisando um array retornado de uma função
+
+Sempre foi possível retornar uma matriz de uma função. A desestruturação pode tornar mais conciso o trabalho com um valor de retorno do tipo array.
+
+Neste exemplo, f() returna os valores [1, 2] como saída, que podem ser analisados em uma única linha com desestruturação.
+
+```css
+function f() {
+  return [1, 2];
+}
+
+var a, b; 
+[a, b] = f(); 
+console.log(a); // 1
+console.log(b); // 2
+```
+
+Ignorando alguns valores retornados
+Você pode ignorar valores retornados que você não tem interesse:
+
+```css
+function f() {
+  return [1, 2, 3];
+}
+
+var [a, , b] = f();
+console.log(a); // 1
+console.log(b); // 3
+
+```
+
+Você também pode ignorar todos os valores retornados:
+
+```css
+[,,] = f();
+```
+
+Atribuindo o resto de um array para uma variável
+Ao desestruturar um array, você pode atribuir a parte restante deste em uma viáriável usando o padrão rest:
+
+```cc
+var [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
+```
+
+Extraindo valores do resultado de uma expressão regular
+Quando o método de expressão regular exec() encontra um resultado, ele retorna um array que contém primeiro toda a porção resultante da string e depois cada uma das porções da string resultante envolvidas por parênteses na expressão regular. A atribuição via desestruturação lhe permite extrair as partes desses array facilmente, ignorando a porção resultante completa se não precisar.
+
+```cs
+var url = "https://developer.mozilla.org/en-US/Web/JavaScript";
+
+var parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);
+console.log(parsedURL); // ["https://developer.mozilla.org/en-US/Web/JavaScript", "https", "developer.mozilla.org", "en-US/Web/JavaScript"]
+
+var [, protocol, fullhost, fullpath] = parsedURL;
+
+console.log(protocol); // "https"
+
+```
+
+
+## Desestruturação de objeto
+
+Atribuição básica
+
+```css
+var o = {p: 42, q: true};
+var {p, q} = o;
+
+console.log(p); // 42
+console.log(q); // true 
+```
+
+Atribuição sem declaração
+Uma variável pode ter seu valor atribuído via desestruturação separadamente da sua declaração.
+
+```css
+var a, b;
+
+({a, b} = {a:1, b:2});
+```
+
+```css
+Os parênteses ( ... ) ao redor da reclaração de atribuição é uma sintaxe necessária  quando se utiliza a atribuição via desestruturação de objeto literal sem uma declaração.
+
+{a, b} = {a:1, b:2} não é uma sintaxe stand-alone válida, pois {a, b} no lado esquerdo é considarada um bloco, não um objeto literal.
+
+No entanto, ({a, b} = {a:1, b:2}) é valida, assim como var {a, b} = {a:1, b:2}
+```
+
+Atribuição para variáveis com novos nomes
+Uma variável pode ser extraída de um objeto e atribuída a uma variável com um nome diferente da propriedade do objeto.
+
+```css
+var o = {p: 42, q: true};
+var {p: foo, q: bar} = o;
+ 
+console.log(foo); // 42 
+console.log(bar); // true  
+```
+
+Valores padrão
+
+Uma variável pode ser atribuída de um padrão, no caso em que o valor retirado do objeto é undefined.
+
+```css
+var {a=10, b=5} = {a: 3};
+
+console.log(a); // 3
+console.log(b); // 5
+```
+
+Definindo um valor padrão de parâmetro de função
+
+#### Versão ES5
+
+```css
+function drawES5Chart(options) {
+  options = options === undefined ? {} : options;
+  var size = options.size === undefined ? 'big' : options.size;
+  var cords = options.cords === undefined ? { x: 0, y: 0 } : options.cords;
+  var radius = options.radius === undefined ? 25 : options.radius;
+  console.log(size, cords, radius);
+  // now finally do some chart drawing
+}
+
+drawES5Chart({
+  cords: { x: 18, y: 30 },
+  radius: 30
+});
+
+```
+
+#### Versão ES2015
+
+```css
+function drawES2015Chart({size = 'big', cords = { x: 0, y: 0 }, radius = 25} = {}) {
+  console.log(size, cords, radius);
+  // do some chart drawing
+}
+
+drawES2015Chart({
+  cords: { x: 18, y: 30 },
+  radius: 30
+});
+
+```
+
+Objeto aninhado e desestruturação de array
+
+```css
+var metadata = {
+    title: "Scratchpad",
+    translations: [
+       {
+        locale: "de",
+        localization_tags: [ ],
+        last_edit: "2014-04-14T08:43:37",
+        url: "/de/docs/Tools/Scratchpad",
+        title: "JavaScript-Umgebung"
+       }
+    ],
+    url: "/en-US/docs/Tools/Scratchpad"
+};
+
+var { title: englishTitle, translations: [{ title: localeTitle }] } = metadata;
+
+console.log(englishTitle); // "Scratchpad"
+console.log(localeTitle);  // "JavaScript-Umgebung"
+
+```
+
+For de iteração e desestruturação
+
+```css
+var people = [
+  {
+    name: "Mike Smith",
+    family: {
+      mother: "Jane Smith",
+      father: "Harry Smith",
+      sister: "Samantha Smith"
+    },
+    age: 35
+  },
+  {
+    name: "Tom Jones",
+    family: {
+      mother: "Norah Jones",
+      father: "Richard Jones",
+      brother: "Howard Jones"
+    },
+    age: 25
+  }
+];
+
+for (var {name: n, family: { father: f } } of people) {
+  console.log("Name: " + n + ", Father: " + f);
+}
+
+// "Name: Mike Smith, Father: Harry Smith"
+// "Name: Tom Jones, Father: Richard Jones"
+```
 
 Fonte:
 * https://webpack.js.org/
