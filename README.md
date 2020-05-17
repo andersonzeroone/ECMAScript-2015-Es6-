@@ -147,13 +147,6 @@ A classe possui em sua estrutura metodos e um construtor, o corpo da chave e env
 O método constructor é um tipo especial de método para criar e iniciar um objeto criado pela classe. Só pode existir um método especial com o nome "constructor" dentro da classe. Um erro de sintáxe SyntaxError será lançado se a classe possui mais do que uma ocorrência do método constructor.
 Um construtor pode usar a palavra-chave super para chamar o construtor de uma classe pai.
 
-
-
-
-
-
-
-
 ## Métodos estáticos
 
 A palavra-chave static define um método estático de uma classe. Métodos estáticos são chamados sem a instanciação da sua classe e não podem ser chamados quando a classe é instanciada. Métodos estáticos são geralmente usados para criar funções de utilidades por uma aplicação.
@@ -357,7 +350,7 @@ leao.falar();
 // Fuzzy roars.
 ```
 
-## Ex de class  do projeto
+## Ex de class  do projeto  
 ```css
 class avo {
       constructor(sobrenome){
