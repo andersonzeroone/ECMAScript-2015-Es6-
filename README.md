@@ -6,7 +6,8 @@ Um pouco sobre as novas funcionalidades do javaScript como:
 
  *  [webpack](#sobre-webpack)
  *  [Class](#sobre-class)
- *  Arrow functions
+ *  [Arrow functions](#sobre-Arrow-funtions 
+)
  *  Desestruturação
  *  Rest/spread
  *  Import/export
