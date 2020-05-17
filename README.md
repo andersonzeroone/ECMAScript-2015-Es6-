@@ -12,12 +12,12 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  Import/export
  *  Async/await
 
-##### Alguns projetos precisam ser rodados no browser  para ver o um pouco o funcionamento do babel.
+##### Alguns projetos precisam ser rodados no browser  para ver o funcionamento do babel.
 
 #### como rodar os projetos do browser
 
 Para rodar os projetos é preciso:
-* Instalar o ![yarn](https://yarnpkg.com/)
+* Instalar o [yarn](https://yarnpkg.com/cli/install)
 * Rodar o "npm i" ou utilizando o yarn para poder instalar as dependências
 * Usar o comando "yarn dev"
 * Abrir o arquivo index.js no browser
