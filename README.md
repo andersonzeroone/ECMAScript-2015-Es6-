@@ -8,7 +8,7 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  [Class](#sobre-class)
  *  [Arrow functions](#sobre-Arrow-funtions)
  *  [Desestruturação](#sobre-desestruturação)
- *  Rest/spread
+ *  [Rest/spread](#sobre-rest-spread)
  *  Import/export
  *  Async/await
 
@@ -715,6 +715,33 @@ for (var {name: n, family: { father: f } } of people) {
 // "Name: Mike Smith, Father: Harry Smith"
 // "Name: Tom Jones, Father: Richard Jones"
 ```
+## Sobre Rest Spread
+
+### Rest
+A sintaxe de rest parameter (parâmetros rest)  nos permite representar um número indefinido de argumentos como um array. Rest parameters foram criados para reduzir o código padrão que foi induzida pelos argumentos.
+
+```css
+function soma(a,b, ...params){  
+    return params.reduce((total, next) => total + next);     
+}
+
+console.log(soma(1,2,3,4,5,6,7,8,9));
+```
+
+#### Descrição
+
+Se o último argumento nomeado de uma função tiver prefixo com  ..., ele irá se tornar um array em que os elemento de 0 (inclusive) até array.length (exclusivo) são disponibilizados pelos argumentos atuais passados à função.
+
+
+#### Diferença entre rest parameters e arguments object
+Há três diferenças principais entre rest parameters e os arguments objects:
+
+
+* Rest parameters são os únicos que não foram atribuidos a um  nome separado, enquanto os arguments object contêm todos os argumentos passados para a função;
+
+* O objeto arguments não é um array, enquanto  rest parameters são instâncias Array,  isso significa que métodos como sort, map, forEach ou pop podem ser aplicados diretamente;
+ 
+* O objeto arguments possui a funcionalidade adicional de especificar ele mesmo (como a propriedade callee). 
 
 Fonte:
 * https://webpack.js.org/
@@ -722,3 +749,4 @@ Fonte:
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao
+* https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/rest_parameters
