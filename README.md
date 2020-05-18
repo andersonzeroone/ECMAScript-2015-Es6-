@@ -8,7 +8,7 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  [Class](#sobre-class)
  *  [Arrow functions](#sobre-Arrow-funtions)
  *  [Desestruturação](#sobre-desestruturação)
- *  [Rest/spread](#sobre-rest-spread)
+ *  [Rest/](#sobre-rest-spread) [spread](#sobre-spread )
  *  Import/export
  *  Async/await
 
