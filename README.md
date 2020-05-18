@@ -8,9 +8,9 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  [Class](#sobre-class)
  *  [Arrow functions](#sobre-Arrow-funtions)
  *  [Desestruturação](#sobre-desestruturação)
- *  [Rest/](#sobre-rest-spread)[spread](#sobre-spread )
+ *  [Rest/](#sobre-rest-spread)[spread](#sobre-spread)
  *  [Import/export](#sobre-import-export)
- *  [Async/await](#sobre-async-await)
+ *  [Async/await](#sobre-Async-e-Await)
 
 ##### Alguns projetos precisam ser rodados no browser  para ver o funcionamento do babel.
 
@@ -796,7 +796,7 @@ arr1.push(...arr2);
 ```
 
 
-## Sobre import/export
+## Sobre import export
 Exportar módulos é bem simples. Após criarmos uma função podemos simplesmente adicionar a palavra export antes da definição da mesma:
 
 ```css
@@ -845,7 +845,7 @@ lib.mult(1, 2) // 2
 
 ```
 
-## Sobre Async/await
+## Sobre Async e Await
 
 A declaração async function define uma função assíncrona, que retorna um objeto AsyncFunction.
 
