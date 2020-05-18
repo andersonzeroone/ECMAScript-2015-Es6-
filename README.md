@@ -9,8 +9,8 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  [Arrow functions](#sobre-Arrow-funtions)
  *  [Desestruturação](#sobre-desestruturação)
  *  [Rest/](#sobre-rest-spread)[spread](#sobre-spread )
- *  [Import/export](#sobre-import/export)
- *  [Async/await](#sobre-Async/await)
+ *  [Import/export](#sobre-import-export)
+ *  [Async/await](#sobre-async-await)
 
 ##### Alguns projetos precisam ser rodados no browser  para ver o funcionamento do babel.
 
