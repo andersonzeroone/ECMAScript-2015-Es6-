@@ -8,9 +8,9 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  [Class](#sobre-class)
  *  [Arrow functions](#sobre-Arrow-funtions)
  *  [Desestruturação](#sobre-desestruturação)
- *  [Rest/](#sobre-rest-spread) [spread](#sobre-spread )
- *  Import/export
- *  Async/await
+ *  [Rest/](#sobre-rest-spread)[spread](#sobre-spread)
+ *  [Import/export](#sobre-import-export)
+ *  [Async/await](#sobre-Async-e-Await)
 
 ##### Alguns projetos precisam ser rodados no browser  para ver o funcionamento do babel.
 
@@ -794,6 +794,114 @@ var arr1 = [0, 1, 2];
 var arr2 = [3, 4, 5];
 arr1.push(...arr2);
 ```
+
+
+## Sobre import export
+Exportar módulos é bem simples. Após criarmos uma função podemos simplesmente adicionar a palavra export antes da definição da mesma:
+
+```css
+// lib.js
+export function sum(x, y) {
+  return x + y
+}
+```
+
+E para importar esse módulo em outro arquivo também é simples:
+
+```css
+import { sum } from 'lib'
+
+sum(1, 2) // 3
+```
+Com múltiplas funções é bem semelhante:
+
+```css
+// lib.js
+export function sum(x, y) {
+  return x + y
+}
+
+export function mult(x, y) {
+  return x * y
+}
+```
+
+E para importar:
+
+```css
+import { sum, mult } from 'lib'
+
+sum(1, 2) // 3
+mult(1, 2) // 2
+```
+
+Podemos também importar o módulo completo:
+
+```css
+import * as lib from 'lib'
+
+lib.sum(1, 2) // 3
+lib.mult(1, 2) // 2
+
+```
+
+## Sobre Async e Await
+
+A declaração async function define uma função assíncrona, que retorna um objeto AsyncFunction.
+
+#### Sintaxe
+
+```css
+async function nome([param[, param[, ... param]]]) {
+   instruções
+}
+```
+
+#### nome
+  * O nome da função.
+#### param
+  * O nome de um parâmetro a ser passado para a função.
+#### instruções
+  * As instruções que compõem o corpo da função
+
+### Descrição
+
+Quando a função assíncrona é chamada, ela retorna uma Promise. Quando retorna um valor, a Promise será resolvida com o valor retornado. Quando a função assíncrona lança uma exceção ou algum valor, a Promise será rejeitada com o valor lançado.
+
+Uma função assíncrona pode conter uma expressão await, que pausa a execução da função assíncrona e espera pela resolução da Promise passada, e depois retoma a execução da função assíncrona e retorna o valor resolvido.
+
+### Exemplo simples
+
+```css
+function resolverDepoisDe2Segundos(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function adicionar1(x) {
+  var a = resolverDepoisDe2Segundos(20);
+  var b = resolverDepoisDe2Segundos(30);
+  return x + await a + await b;
+}
+
+adicionar1(10).then(v => {
+  console.log(v);  // exibe 60 depois de 2 segundos.
+});
+
+async function adicionar2(x) {
+  var a = await resolverDepoisDe2Segundos(20);
+  var b = await resolverDepoisDe2Segundos(30);
+  return x + a + b;
+}
+
+adicionar2(10).then(v => {
+  console.log(v);  // exibe 60 depois de 4 segundos.
+```
+
+
 Fonte:
 * https://webpack.js.org/
 * https://medium.com/rocketseat/entendendo-e-dominando-o-webpack-4b2e8b3e02da
@@ -802,3 +910,4 @@ Fonte:
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/rest_parameters
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_operator
+* https://medium.com/@matheusml/o-guia-do-es6-tudo-que-voc%C3%AA-precisa-saber-8c287876325f
