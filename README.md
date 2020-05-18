@@ -8,7 +8,7 @@ Um pouco sobre as novas funcionalidades do javaScript como:
  *  [Class](#sobre-class)
  *  [Arrow functions](#sobre-Arrow-funtions)
  *  [Desestruturação](#sobre-desestruturação)
- *  [Rest/spread](#sobre-rest-spread)
+ *  [Rest/](#sobre-rest-spread) [spread](#sobre-spread )
  *  Import/export
  *  Async/await
 
@@ -743,6 +743,57 @@ Há três diferenças principais entre rest parameters e os arguments objects:
  
 * O objeto arguments possui a funcionalidade adicional de especificar ele mesmo (como a propriedade callee). 
 
+
+## Sobre Spread 
+
+A sintaxe Spread permite que um objeto iterável, como um array ou string, seja expandida em locais onde zero ou mais argumentos (para chamadas de função) ou elementos (para literais de array) sejam esperados ou uma expressão de objeto seja expandida em locais onde zero ou mais pares de chave-valor (para literais de objeto) são esperados.
+
+### EX:
+
+```css
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 = [ ...arr1, ...arr2];
+
+console.log(arr3);
+```
+
+#### Uma melhor aplicação
+
+Exemplo: é comum usar Function.prototype.apply em casos onde você quer usar um array como argumentos em uma função.
+
+```css
+function minhaFuncao(x, y, z) { }
+var args = [0, 1, 2];
+minhaFuncao.apply(null, args);
+```
+#### Com o spread do ES2015 você pode agora escrever isso acima como:
+```
+function minhaFuncao(x, y, z) { }
+var args = [0, 1, 2];
+minhaFuncao(...args);
+
+```
+
+### Ex com push 
+
+#### No ES5:
+
+```css
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+// Acrescenta todos itens do arr2 ao arr1
+Array.prototype.push.apply(arr1, arr2);
+
+```
+
+####  No ES2015 com spread:
+
+```css
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1.push(...arr2);
+```
 Fonte:
 * https://webpack.js.org/
 * https://medium.com/rocketseat/entendendo-e-dominando-o-webpack-4b2e8b3e02da
@@ -750,3 +801,4 @@ Fonte:
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao
 * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/rest_parameters
+* https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_operator
