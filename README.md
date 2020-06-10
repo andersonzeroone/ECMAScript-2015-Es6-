@@ -120,7 +120,7 @@ module.exports = {
 
 ## Sobre Class
 
-As classes foram introduzidas no ECMAScript 2015, uma herança baseada em protótipos.As casses em JavaScript permite a criação simples e clara de objetos e lidar com herança.
+As classes foram introduzidas no ECMAScript 2015, uma herança baseada em protótipos.As classes em JavaScript permite a criação simples e clara de objetos e lidar com herança.
 
 Definindo classes
 Uma maneira de definir uma classe é usando uma declaração de classe. Para declarar uma classe, você deve usar a palavra-chave class seguida pelo nome da classe (aqui "avo").
